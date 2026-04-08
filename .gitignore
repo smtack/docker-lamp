@@ -1,0 +1,9 @@
+# Ignore environment variables
+.env
+
+# Ignore Docker volumes
+db-data/
+
+# Common ignores
+.DS_Store
+*.log
