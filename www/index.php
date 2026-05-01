@@ -1,13 +1,11 @@
 <?php
 $host = 'db'; # Must match service name in docker-compose.yml
-$db = 'myapp'; # Must match MYSQL_DATABASE in .env
-
-# Username and Password must match MYSQL_USER and MYSQL_PASSWORD in .env
-$user = 'myuser'; 
-$pass = 'mypassword';
+$db = getenv('MYSQL_DATABASE');
+$user = getenv('MYSQL_USER'); 
+$password = getenv('MYSQL_PASSWORD');
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $pass);
+    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $password);
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
