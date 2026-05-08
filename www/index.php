@@ -1,7 +1,7 @@
 <?php
-$host = 'db'; # Must match service name in docker-compose.yml
+$host = 'db';
 $db = getenv('MYSQL_DATABASE');
-$user = getenv('MYSQL_USER'); 
+$user = getenv('MYSQL_USER');
 $password = getenv('MYSQL_PASSWORD');
 
 try {
