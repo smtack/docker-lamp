@@ -3,9 +3,10 @@ $host = 'db';
 $db = getenv('MYSQL_DATABASE');
 $user = getenv('MYSQL_USER');
 $password = getenv('MYSQL_PASSWORD');
+$charset = 'utf8mb4';
 
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=utf8mb4", $user, $password);
+    $pdo = new PDO("mysql:host=$host;dbname=$db;charset=$charset", $user, $password);
 
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
